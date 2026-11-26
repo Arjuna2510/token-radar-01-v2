@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Token Launch Radar — radar-3</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<main id="app">
+  <header class="masthead">
+    <div>
+      <h1>Token Launch Radar</h1>
+      <p class="tagline">Every pre-token protocol, ranked by what its token would be worth if it launches — times the odds it launches at all.</p>
+    </div>
+    <div class="model-badge">radar-3 · fitted value, held-out twice, odds-weighted</div>
+  </header>
+  <section id="integrity" class="strip" aria-label="Integrity strip"></section>
+  <section class="toolbar" aria-label="Filters">
+    <input id="q" type="search" placeholder="Search name, slug, category or chain…" aria-label="Search">
+    <select id="category" aria-label="Category"><option value="all">All categories</option></select>
+    <select id="chain" aria-label="Chain"><option value="all">All chains</option></select>
+    <select id="sort" aria-label="Sort by">
+      <option value="expected">Sort: expected value</option>
+      <option value="base">Sort: base value if launched</option>
+      <option value="odds">Sort: launch odds</option>
+      <option value="tvl">Sort: TVL</option>
+      <option value="growth">Sort: 7-day growth</option>
+      <option value="age">Sort: age</option>
+    </select>
+  </section>
+  <nav class="tabs" aria-label="Views">
+    <button data-tab="pre-token" class="active">Pre-token board</button>
+    <button data-tab="live">Live token</button>
+    <button data-tab="set-aside">Set aside</button>
+    <button data-tab="method">How the model works</button>
+  </nav>
+  <section id="board" aria-live="polite"></section>
+  <footer class="footnote">
+    <p>Implied and expected values are this radar's model claims from the sealed snapshot, not prices and not promises. “Records no token” means the snapshot's record carries no token — a protocol on this board may still hold one its record does not carry. Farm plans are plans, not advice; never pay to claim an airdrop.</p>
+    <p id="source-line"></p>
+  </footer>
+</main>
+<dialog id="detail"></dialog>
+<script src="../data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
